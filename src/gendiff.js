@@ -1,12 +1,22 @@
 import { readFileSync } from 'fs';
 import path from 'path';
+import yaml from 'js-yaml';
+
+const readFile = (filepath) => {
+  const fullPath = path.resolve(filepath);
+  const content = readFileSync(fullPath, 'utf-8');
+  const ext = path.extname(filepath); 
+  
+  if (ext === '.json') {
+    return JSON.parse(content);
+  }
+  if (ext === '.yml' || ext === '.yaml') {
+    return yaml.load(content);
+  }
+  throw new Error(`Unknown format: ${ext}`);
+};
 
 const genDiff = (filepath1, filepath2) => {
-    const readFile = (filepath) => {
-    const fullPath = path.resolve(filepath);
-    const content = readFileSync(fullPath, 'utf-8');
-    return JSON.parse(content);
-    }
 const data1 = readFile(filepath1);
 const data2 = readFile(filepath2);
 

@@ -1,19 +1,6 @@
 #!/usr/bin/env node
-import { program } from 'commander';
-import { readFileSync } from 'fs';
-import path from 'path';
-import { genDiff } from '../index.js';
-
-const parseFile = (filepath) => {
-  const absolutePath = path.resolve(process.cwd(), filepath);
-  const content = readFileSync(absolutePath, 'utf-8');
-  const ext = path.extname(filepath).slice(1);
-  
-  if (ext === 'json') {
-    return JSON.parse(content);
-  }
-  throw new Error(`Unsupported format: ${ext}`);
-}
+import { program } from 'commander'
+import { genDiff } from '../index.js'
 
 program
   .name('gendiff')

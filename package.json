@@ -1,0 +1,36 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/Mortalren/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Mortalren/frontend-project-46/actions)",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint ."
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mortalren/frontend-project-46.git"
+  },
+  "author": "Mortalren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mortalren/frontend-project-46/issues"
+  },
+  "homepage": "https://github.com/Mortalren/frontend-project-46#readme",
+  "dependencies": {
+    "commander": "^14.0.3",
+    "lodash": "^4.17.23"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0",
+    "globals": "^17.3.0",
+    "jest": "^30.2.0"
+  }
+}
